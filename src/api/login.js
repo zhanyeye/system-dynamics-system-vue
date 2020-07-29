@@ -14,6 +14,7 @@ const userApi = {
 }
 
 /**
+ * 登录
  * login func
  * parameter: {
  *     username: '',
@@ -32,14 +33,23 @@ export function login (parameter) {
   })
 }
 
-export function getSmsCaptcha (parameter) {
+/**
+ * 注册
+ * @param parameter
+ * @returns {AxiosPromise}
+ */
+export function register (parameter) {
   return request({
-    url: userApi.SendSms,
+    url: userApi.Register,
     method: 'post',
     data: parameter
   })
 }
 
+/**
+ * 获取用户信息
+ * @returns {AxiosPromise}
+ */
 export function getInfo () {
   return request({
     url: userApi.UserInfo,
@@ -50,6 +60,11 @@ export function getInfo () {
   })
 }
 
+/**
+ * ！这里没有用到
+ * 动态获取菜单
+ * @returns {AxiosPromise}
+ */
 export function getCurrentUserNav () {
   return request({
     url: userApi.UserMenu,
@@ -57,6 +72,10 @@ export function getCurrentUserNav () {
   })
 }
 
+/**
+ * 登出
+ * @returns {AxiosPromise}
+ */
 export function logout () {
   return request({
     url: userApi.Logout,
@@ -64,17 +83,5 @@ export function logout () {
     headers: {
       'Content-Type': 'application/json;charset=UTF-8'
     }
-  })
-}
-
-/**
- * get user 2step code open?
- * @param parameter {*}
- */
-export function get2step (parameter) {
-  return request({
-    url: userApi.twoStepCode,
-    method: 'post',
-    data: parameter
   })
 }
