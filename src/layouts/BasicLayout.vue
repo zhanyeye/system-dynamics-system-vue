@@ -92,8 +92,6 @@ export default {
   },
   created () {
     this.menus = asyncRouterMap.find((item) => item.path === '/').children
-    // const routes = this.mainMenu.find(item => item.path === '/')
-    // this.menus = (routes && routes.children) || []
     // 处理侧栏收起状态
     this.$watch('collapsed', () => {
       this.$store.commit(SIDEBAR_TYPE, this.collapsed)

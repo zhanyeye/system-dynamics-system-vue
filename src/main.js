@@ -11,13 +11,9 @@ import { VueAxios } from './utils/request'
 import ProLayout, { PageHeaderWrapper } from '@ant-design-vue/pro-layout'
 import themePluginConfig from '../config/themePluginConfig'
 
-// mock
-// WARNING: `mockjs` NOT SUPPORT `IE` PLEASE DO NOT USE IN `production` ENV.
-// import './mock'
-
 import bootstrap from './core/bootstrap'
+import { IconFont } from '@/core/icons'
 import './core/lazy_use'
-// import './permission' // permission control
 import './utils/filter' // global filter
 import './global.less'
 
@@ -27,6 +23,7 @@ Vue.config.productionTip = false
 Vue.use(VueAxios)
 Vue.component('pro-layout', ProLayout)
 Vue.component('page-header-wrapper', PageHeaderWrapper)
+Vue.component('icon-font', IconFont)
 
 window.umi_plugin_ant_themeVar = themePluginConfig.theme
 

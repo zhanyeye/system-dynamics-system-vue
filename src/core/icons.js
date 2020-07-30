@@ -7,5 +7,10 @@
  * 所有图标均从这里加载，方便管理
  */
 import bxAnaalyse from '@/assets/icons/bx-analyse.svg?inline' // path to your '*.svg?inline' file.
+import { Icon } from 'ant-design-vue'
 
-export { bxAnaalyse }
+const IconFont = Icon.createFromIconfontCN({
+  scriptUrl: '//at.alicdn.com/t/font_1976081_kufanr4p9g8.js'
+})
+
+export { bxAnaalyse, IconFont }
